@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/screens/login.dart';
+import 'package:my_first_app/screens/register.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,32 +9,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Welcome to flutter',
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('login'),
-          ),
-          body: Column(
-            children:  <Widget>[
-              TextField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                ),
-              ),
-              TextField(
-                keyboardType: TextInputType.visiblePassword,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                ),
-              ),
-              ElevatedButton(
-                  onPressed: ()=>print('login clicked'),
-                  child: Text('Login'),
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 36)),
-              ),
-            ],
-          )),
+      home: Login(),
+      routes: {
+        '/login': (context) => Login(),
+        '/register': (context) => Register(),
+      },
     );
   }
 }
