@@ -44,7 +44,9 @@ class Register extends StatelessWidget {
                           ),
                         ),
                         ElevatedButton(
-                          onPressed: () => print('login clicked'),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/categories');
+                          },
                           child: Text('Register'),
                           style: ElevatedButton.styleFrom(
                               minimumSize: Size(double.infinity, 36)),
@@ -52,7 +54,7 @@ class Register extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(top: 20),
                           child: InkWell(
-                            onTap: (){
+                            onTap: () {
                               Navigator.pop(context);
                             },
                             child: Text('<- Back to login'),
